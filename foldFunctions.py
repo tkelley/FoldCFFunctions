@@ -1,13 +1,5 @@
 import sublime, sublime_plugin
 
-# Fold functions when file loads
-class FoldFileCffunctions(sublime_plugin.EventListener):
-    def on_load(self, view):
-        contentRegions = findCffunctionContent(view)
-        contentRegions += findScriptFunctionContent(view)
-
-        view.fold(contentRegions)
-
 # Fold functions on command
 class FoldCffunctionsCommand(sublime_plugin.TextCommand):
     def run(self, edit):
